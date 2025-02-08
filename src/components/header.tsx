@@ -1,7 +1,11 @@
+import { getCategories } from "@/actions/categories";
 import Link from "next/link";
+import { Navbar } from "./navbar";
 import { Container } from "./ui/container";
 
-export function Header() {
+export async function Header() {
+  const categories = await getCategories(); 
+
   return (
     <header className="border-b">
       <Container>
@@ -9,6 +13,7 @@ export function Header() {
           <Link href={"/"} className="ml-4 flex">
             <p className="font-bold text-xl">LOJA</p>
           </Link>
+          <Navbar data={categories} />
         </div>
       </Container>
     </header>
