@@ -1,4 +1,4 @@
-import { getCategories } from "@/actions/categories";
+import { getCategories } from "@/actions/get-categories";
 import Link from "next/link";
 import { Navbar } from "./navbar";
 import { NavbarActions } from "./navbar-actions";
