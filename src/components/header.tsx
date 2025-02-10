@@ -1,10 +1,11 @@
 import { getCategories } from "@/actions/categories";
 import Link from "next/link";
 import { Navbar } from "./navbar";
+import { NavbarActions } from "./navbar-actions";
 import { Container } from "./ui/container";
 
 export async function Header() {
-  const categories = await getCategories(); 
+  const categories = await getCategories();
 
   return (
     <header className="border-b">
@@ -14,6 +15,7 @@ export async function Header() {
             <p className="font-bold text-xl">LOJA</p>
           </Link>
           <Navbar data={categories} />
+          <NavbarActions />
         </div>
       </Container>
     </header>
