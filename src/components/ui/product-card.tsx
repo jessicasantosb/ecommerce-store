@@ -5,12 +5,22 @@ import Image from "next/image";
 
 import { Product } from "@/types";
 
+import { useRouter } from "next/navigation";
 import { Currency } from "./currency";
 import { IconButton } from "./icon-button";
 
 export function ProductCard({ data }: { data: Product }) {
+  const { push } = useRouter();
+
+  const handleClick = () => {
+    push(`/product/${data?.id}`);
+  };
+
   return (
-    <div className="group space-x-4 p-3 bg-white cursor-pointer rounded-xl border">
+    <div
+      onClick={handleClick}
+      className="group space-x-4 p-3 bg-white cursor-pointer rounded-xl border"
+    >
       <div className="relative aspect-square rounded-xl bg-gray-100">
         <Image
           alt="produto"
