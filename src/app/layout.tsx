@@ -5,6 +5,7 @@ import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { ModalProvider } from "@/providers/modal-provider";
 
+import { ToastProvider } from "@/providers/toast-provider";
 import "./globals.css";
 
 const font = Urbanist({ subsets: ["latin"] });
@@ -23,6 +24,7 @@ export default function RootLayout({
     <html lang="pt-br">
       <body className={`${font.className} antialiased`}>
         <ModalProvider />
+        <ToastProvider />
         <Header />
         {children}
         <Footer />
