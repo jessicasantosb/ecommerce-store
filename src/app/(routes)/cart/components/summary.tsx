@@ -15,7 +15,7 @@ export function Summary() {
     const response = await axios.post(
       `${process.env.NEXT_PUBLIC_API_URL}/checkout`,
       {
-        productId: items.map((item) => item.id),
+        productIds: items.map((item) => item.id),
       }
     );
 
@@ -33,7 +33,11 @@ export function Summary() {
         </div>
       </div>
 
-      <Button onClick={handleCheckout} className="w-full mt-6">
+      <Button
+        disabled={items.length === 0}
+        onClick={handleCheckout}
+        className="w-full mt-6"
+      >
         Finalizar
       </Button>
     </div>
