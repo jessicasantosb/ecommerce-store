@@ -37,12 +37,10 @@ Minha principal motivação foi construir uma base sólida para lojas e-commerce
 
 Certifique-se de ter instalado:
 
-- **[Node.js](https://nodejs.org/)**
-- **[Yarn](https://yarnpkg.com/)**
+[![Yarn](https://img.shields.io/badge/Yarn-3775A9?style=flat&logo=Yarn&logoColor=white)](https://yarnpkg.com/)  
+[![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat&logo=Node.js&logoColor=white)](https://nodejs.org/)
 
 ### ⚙️ Instalação
-
-#### [![yarn](https://img.shields.io/badge/Yarn-3775A9.svg?style=flat&logo=Yarn&logoColor=white)](https://github.com/jessicasantosb/ecommerce-store)
 
 ```sh
 ❯ git clone git@github.com:jessicasantosb/ecommerce-store.git
