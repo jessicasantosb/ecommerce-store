@@ -1,11 +1,26 @@
 import axios from "axios";
 
+import { useSearchParams } from "next/navigation";
+import { useEffect } from "react";
+import toast from "react-hot-toast";
+
 import { Button } from "@/components/ui/button";
 import { Currency } from "@/components/ui/currency";
 import { useCart } from "@/hooks/use-cart";
 
 export function Summary() {
+  const searchParams = useSearchParams();
   const items = useCart((state) => state.items);
+  const removeAll = useCart((state) => state.removeAll);
+
+  useEffect(() => {
+    if (searchParams.get("success")) {
+      toast.success("Pagamento realizado");
+      removeAll();
+    }
+
+    if (searchParams.get("canceled")) toast.error("Algo deu errado.");
+  }, [removeAll, searchParams]);
 
   const totalPrice = items.reduce((acc, item) => {
     return acc + Number(item.price);
